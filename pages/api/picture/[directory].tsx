@@ -15,7 +15,7 @@ export default async function handler(req: any, res: any) {
       path.resolve(process.cwd(), "blogs", req.query.directory, "image.png")
     )
   ) {
-    res.send("");
+    res.json({err: 'Image not found in: ' + path.resolve(process.cwd(), "blogs", req.query.directory, "image.png")});
     return;
   }
   const r = fs.createReadStream(
