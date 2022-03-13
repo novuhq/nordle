@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(props: any) {
-  const file = path.resolve(process.cwd(), "blogs", props.params.blog);
+  const file = path.resolve(process.cwd(), "public", "blogs", props.params.blog);
   try {
     const mdx = readFileSync(path.resolve(file, "blog.md")).toString();
     return {

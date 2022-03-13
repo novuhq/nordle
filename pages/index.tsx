@@ -23,7 +23,7 @@ export async function getStaticProps() {
     path: p.name,
     ...JSON.parse(
       readFileSync(
-        path.resolve(process.cwd(), "blogs", p.name, "config.json")
+        path.resolve(process.cwd(), "public", "blogs", p.name, "config.json")
       ).toString()
     ),
   }));

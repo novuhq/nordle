@@ -13,7 +13,7 @@ export const Item: FC<{ blog: Blogs }> = (props) => {
       <div className={styles.item}>
         <div>
           <div className={styles.picture}>
-            <img src={`/api/picture/${path}`} />
+            <img src={`/blogs/${path}/image.png`} />
           </div>
           <h2>{title}</h2>
           <h3 onClick={e => {e.preventDefault(); e.stopPropagation(); window.open(authorGit)}}>

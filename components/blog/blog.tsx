@@ -23,7 +23,7 @@ export const Blog: FC<{ blog: Blogs }> = (props) => {
         </a>
       </h2>
       <div className={styles.wrapper}>
-        <img src={`/api/picture/${router.query.blog}`} className={styles.img} />
+        <img src={`/blogs/${router.query.blog}/image.png`} className={styles.img} />
         <div className={`${styles.left} markdown-body`}>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {blog?.mdx!}
