@@ -1,0 +1,6 @@
+{
+  "author": "Nevo David",
+  "authorGit": "https://github.com/nevo-david",
+  "title": "Sending SMSs and Emails",
+  "shortDescription": "How to easily send SMSs and Emails using Twilio and Sendgrid"
+}

@@ -1,5 +1,5 @@
 .wrapper {
-  background: linear-gradient(180deg, #1A1A1A 0%, rgba(26, 26, 26, 0.7) 100%);
+  background: #0E1117;
   border-radius: 20px;
   display: inline-block;
   min-width: 464px;
@@ -10,10 +10,23 @@
   text-align: center;
 }
 
+.img {
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
 .left {
   text-align: left;
 }
 
+.left * {
+  font-size: 20px;
+}
+
 .author {
+  font-size: 20px;
+}
+
+.author a {
   font-size: 20px;
 }

@@ -15,6 +15,12 @@
     font-weight: normal;
 }
 
+.header img {
+    filter: invert(1);
+    max-width: 81px;
+    cursor: pointer;
+}
+
 .header div:nth-child(1) {
     flex: 1;
 }
@@ -32,7 +38,7 @@
 
 .header li[data-stars] > div {
     cursor: pointer;
-    width: 189px;
+    width: 220px;
     height: 40px;
     background: black;
     border: 1px solid #4D4D4D;
@@ -71,14 +77,14 @@
     font-size: 12px;
 }
 
-@media (max-width: 768px) {
-    .header ul:before {
-        content: url("/menu.svg");
-    }
-    .header ul li {
-        display: none !important;
-    }
-    .header ul:focus + li {
-        display: block !important;
-    }
-}
+/*@media (max-width: 768px) {*/
+/*    .header ul:before {*/
+/*        content: url("/menu.svg");*/
+/*    }*/
+/*    .header ul li {*/
+/*        display: none !important;*/
+/*    }*/
+/*    .header ul:focus + li {*/
+/*        display: block !important;*/
+/*    }*/
+/*}*/
