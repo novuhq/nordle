@@ -1,0 +1,84 @@
+.wrapper {
+    padding: 20px 40px;
+}
+.wrapper h1 {
+    text-align: center;
+    font-size: 56px;
+    padding: 0;
+    margin: 0 0 83px 0;
+}
+.header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    font-weight: normal;
+}
+
+.header div:nth-child(1) {
+    flex: 1;
+}
+.header ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header li[data-item]:not(:last-child) {
+    margin-right: 32px;
+}
+
+.header li[data-stars] > div {
+    cursor: pointer;
+    width: 189px;
+    height: 40px;
+    background: black;
+    border: 1px solid #4D4D4D;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+}
+
+.header li[data-get-started] {
+    width: 121px;
+    height: 40px;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.header li[data-get-started] div {
+    background: white;
+    color: black;
+    font-size: 12px;
+}
+
+.header li[data-stars] div {
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .header ul:before {
+        content: url("/menu.svg");
+    }
+    .header ul li {
+        display: none !important;
+    }
+    .header ul:focus + li {
+        display: block !important;
+    }
+}

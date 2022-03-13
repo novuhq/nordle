@@ -1,0 +1,19 @@
+.wrapper {
+  background: linear-gradient(180deg, #1A1A1A 0%, rgba(26, 26, 26, 0.7) 100%);
+  border-radius: 20px;
+  display: inline-block;
+  min-width: 464px;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 30px;
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.author {
+  font-size: 20px;
+}

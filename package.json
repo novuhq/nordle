@@ -1,0 +1,41 @@
+{
+  "name": "notifire-payment",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "build": "next build",
+    "start": "next start -p 3004",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.22.0",
+    "@types/axios": "^0.14.0",
+    "@types/micro": "^7.3.6",
+    "@types/uuid": "^8.3.4",
+    "@types/yup": "^0.29.13",
+    "axios": "^0.24.0",
+    "concurrently": "^7.0.0",
+    "dts-gen": "^0.6.0",
+    "facebook-business-sdk-ts": "^9.0.1",
+    "facebook-nodejs-business-sdk": "^12.0.1",
+    "formik": "^2.2.9",
+    "git-blame": "^1.4.0",
+    "micro": "^9.3.4",
+    "next": "12.0.7",
+    "next-seo": "^5.1.0",
+    "prettier": "^2.5.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-loader-spinner": "^4.0.0",
+    "react-markdown": "^8.0.0",
+    "stream": "0.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.7",
+    "@types/react": "17.0.38",
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.7",
+    "typescript": "4.5.4"
+  }
+}

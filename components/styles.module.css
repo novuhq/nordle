@@ -1,0 +1,60 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.wrapper * {
+    background: white;
+}
+
+.loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader * {
+    background: white;
+}
+
+.wrapper input, .wrapper select {
+    height: 50px;
+}
+
+.wrapper .err {
+    margin-bottom: 10px;
+    display: block;
+    height: 10px;
+    font-size: 10px;
+    color: red;
+    text-align: right;
+}
+.creditCardWrapper {
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #D7DBEA;
+    display: flex;
+    align-items: center;
+}
+
+.creditCardWrapper div {
+    flex: 1;
+}
+
+.wrapper button {
+    height: 50px;
+    margin-top: 30px;
+}
