@@ -18,7 +18,7 @@ export const Blog: FC<{ blog: Blogs }> = (props) => {
     >
       <h2 className={styles.author}>
         Written by{" "}
-        <a href={blog?.authorGit!} target="_blank">
+        <a href={blog?.authorGit!}>
           {blog?.author!}
         </a>
       </h2>
