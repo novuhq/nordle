@@ -12,6 +12,7 @@ export const Layout: FC<{
 }> = (props) => {
   const router = useRouter();
   const { children, title, description, picture } = props;
+  const lastPath = router.asPath.split('/').reverse().find(f => f);
   return (
     <div className={styles.wrapper}>
       <NextSeo
@@ -25,7 +26,7 @@ export const Layout: FC<{
           images: picture
             ? [
                 {
-                  url: "https://blog.novu.co/blogs/" + router.asPath + 'image.png',
+                  url: "https://blog.novu.co/blogs/" + lastPath + '/image.png',
                   width: 800,
                   height: 600,
                   alt:description,
