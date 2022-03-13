@@ -19,16 +19,16 @@ export const Layout: FC<{
         description={description}
         canonical={"https://blog.novu.co" + router.asPath}
         openGraph={{
-          url: "https://www.url.ie/a",
-          title: "Open Graph Title",
-          description: "Open Graph Description",
+          url: "https://blog.novu.co" + router.asPath,
+          title: "Novu - " + title,
+          description: description,
           images: picture
             ? [
                 {
-                  url: "https://blog.novu.co/api/picture/" + router.asPath,
+                  url: "https://blog.novu.co/blogs/" + router.asPath + 'image.png',
                   width: 800,
                   height: 600,
-                  alt: "Og Image Alt",
+                  alt:description,
                   type: "image/jpeg",
                 },
               ]
