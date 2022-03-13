@@ -4,6 +4,7 @@ import path from "path";
 import { Blogs } from "../../interfaces/blogs";
 import { Blog } from "../../components/blog/blog";
 import {Layout} from "../../components/layout/layout";
+import { loadDirectories } from "../../helpers/load.directories";
 
 const Read: NextPage<{ blog: Blogs }> = (props) => {
   const { blog } = props;
@@ -14,8 +15,9 @@ const Read: NextPage<{ blog: Blogs }> = (props) => {
 };
 
 export async function getStaticPaths() {
+  const dirs = loadDirectories();
   return {
-    paths: [{ params: { blog: "blog" } }],
+    paths: dirs.map(d => ({ params: { blog: d.name } })),
     fallback: true, // false or 'blocking'
   };
 }
