@@ -7,6 +7,7 @@ import { showModal } from "./modal";
 import { HowToPlay } from "../modals/how.to.play";
 import { Congrats } from "../modals/congrats";
 import { Loser } from "../modals/loser";
+import { ToastContainer, toast } from 'react-toastify';
 
 type blockType = Array<Array<{ letter: string; status: string }>>;
 let savedBlocked: blockType = [[]];
@@ -82,6 +83,10 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
     setLoading(true);
 
     const { data } = await axios.get(`/api/check?words=${letters}`);
+    if (data.every((f: any) => !f.status)) {
+      toast.info('Not a valid word');
+      return;
+    }
     complete(data);
 
     setTimeout(() => {
@@ -94,7 +99,7 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
       setTimeout(() => {
         setLock(true);
         correct();
-      }, 1100);
+      }, 1900);
       return;
     }
 
@@ -102,7 +107,7 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
       setTimeout(() => {
         setLock(true);
         failed();
-      }, 1100);
+      }, 1900);
       return;
     }
   };
@@ -195,7 +200,11 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
         {savedBlocked.map((row, k) => (
           <div key={`a-${k}`}>
             {row.map((col, k2) => (
-              <div key={`a-${k2}`} data-status={col.status}>
+              <div
+                style={{ animationDelay: (k2 || 0) * 200 + "ms" }}
+                key={`a-${k2}`}
+                data-status={col.status}
+              >
                 {col.letter}
               </div>
             ))}

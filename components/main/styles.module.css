@@ -34,8 +34,27 @@
 }
 
 @keyframes rotateAnimation {
-    from {transform: rotateY(0deg);}
-    to {transform: rotateY(360deg);}
+    0% {transform: rotateX(0deg);}
+    50% {transform: rotateX(90deg);}
+    100% {transform: rotateX(0deg);}
+}
+
+@keyframes backgroundCorrect {
+    0% {transform: rotateX(0deg); background-color: black}
+    50% {transform: rotateX(90deg); background-color: black}
+    100% {transform: rotateX(0deg); background-color: #538d4e}
+}
+
+@keyframes backgroundUsed {
+    0% {transform: rotateX(0deg); background-color: black}
+    50% {transform: rotateX(90deg); background-color: black}
+    100% {transform: rotateX(0deg); background-color: #3a3a3c}
+}
+
+@keyframes backgroundMisplaced {
+    0% {transform: rotateX(0deg); background-color: black}
+    50% {transform: rotateX(90deg); background-color: black}
+    100% {transform: rotateX(0deg); background-color: #b59f3b}
 }
 
 .wrapper > div > div {
@@ -53,15 +72,21 @@
 }
 
 .wrapper > div > div[data-status="correct"] {
-    background: #538d4e;
-    transform: rotateY(360deg);
-    animation: rotateAnimation 1s linear;
+    transform: rotateX(360deg);
+    animation: rotateAnimation 1s linear, backgroundCorrect 1s linear;
+    animation-fill-mode: forwards;
+}
+
+.wrapper > div > div[data-status="used"] {
+    transform: rotateX(360deg);
+    animation: rotateAnimation 1s linear, backgroundUsed 1s linear;
+    animation-fill-mode: forwards;
 }
 
 .wrapper > div > div[data-status="misplaced"] {
-    background: #b59f3b;
-    transform: rotateY(360deg);
-    animation: rotateAnimation 1s linear;
+    transform: rotateX(360deg);
+    animation: rotateAnimation 1s linear, backgroundMisplaced 1s linear;
+    animation-fill-mode: forwards;
 }
 
 .keyboardButton {
