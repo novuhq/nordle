@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { Layout } from "../components/layout/layout";
-import Nordle from "../components/main/nordle";
+import dynamic from "next/dynamic";
+const Nordle = dynamic(() => import("../components/main/nordle"));
 
 const Home: NextPage<{ WORD_LENGTH: number }> = (props) => {
   return (
