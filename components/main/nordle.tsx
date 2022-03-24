@@ -32,7 +32,7 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
     if (!tries) {
       showModal({
         title: "Guess our company name and win some swag!",
-        component: (close) => <HowToPlay close={close} />,
+        component: (close) => <HowToPlay close={close} wordLength={wordLength} />,
       });
     } else {
       checkForComplete();
