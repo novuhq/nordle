@@ -14,7 +14,11 @@ export default async function handler(
   const letters = (req.query.words as string) || "";
   const splitLetters = letters.split("");
 
-  if (letters !== word && !wordr[letters]) {
+  if (
+    letters !== word &&
+    !wordr[letters] &&
+    process.env.WORDLE_DICTIONARY === "true"
+  ) {
     res.json(splitLetters.map((l) => ({ letter: l, status: "" })));
     return;
   }

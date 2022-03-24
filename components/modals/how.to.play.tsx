@@ -32,6 +32,9 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
             zIndex: 10,
           }}
         />
+        Hey! We are Notifire an open-source notification infrastructure,<br />
+        We are very excited to announce we are changing our company name,<br />
+        and we would love to invite you to guess our new (in a Wordle-like game) and win some sweeeeet swag.<br />
         Guess the company name in six tries.
         <br />
         Each guess must be a valid{" "}
@@ -86,7 +89,7 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
       </div>
       <div style={{ marginLeft: 30, display: "flex", flexDirection: "column" }}>
         Win Awesome Prizes!
-        <img style={{ maxWidth: 400 }} src="/img.png" />
+        <img style={{ maxWidth: 400, borderRadius: 10 }} src="/img.png" />
       </div>
     </div>
   );
