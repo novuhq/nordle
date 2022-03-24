@@ -1,0 +1,21 @@
+.wrapper [data-row] {
+    display: flex;
+    margin: 0 -5px;
+}
+.wrapper [data-letter] {
+    width: 40px;
+    height: 40px;
+    color: white;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    border-radius: 10px;
+}
+
+.wrapper [data-letter]:before {
+    font-size: 20px;
+    text-transform: uppercase;
+    content: attr(data-letter);
+}
