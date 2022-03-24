@@ -202,7 +202,7 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
           <div key={`a-${k}`}>
             {row.map((col, k2) => (
               <div
-                style={{ animationDelay: (k2 || 0) * 200 + "ms" }}
+                style={{ animationDelay: (k2 || 0) * 100 + "ms" }}
                 key={`a-${k2}`}
                 data-status={col.status}
               >

@@ -73,19 +73,19 @@
 
 .wrapper > div > div[data-status="correct"] {
     transform: rotateX(360deg);
-    animation: rotateAnimation 1s linear, backgroundCorrect 1s linear;
+    animation: rotateAnimation 0.5s linear, backgroundCorrect 0.5s linear;
     animation-fill-mode: forwards;
 }
 
 .wrapper > div > div[data-status="used"] {
     transform: rotateX(360deg);
-    animation: rotateAnimation 1s linear, backgroundUsed 1s linear;
+    animation: rotateAnimation 0.5s linear, backgroundUsed 0.5s linear;
     animation-fill-mode: forwards;
 }
 
 .wrapper > div > div[data-status="misplaced"] {
     transform: rotateX(360deg);
-    animation: rotateAnimation 1s linear, backgroundMisplaced 1s linear;
+    animation: rotateAnimation 0.5s linear, backgroundMisplaced 0.5s linear;
     animation-fill-mode: forwards;
 }
 
