@@ -17,6 +17,10 @@ export const Layout: FC<{
   return (
     <div className={styles.wrapper}>
       <Header />
+      <NextSeo
+        title={"Notifire - Find our new company name"}
+        description={"Wordle or should we say Nordle? (Hint)"}
+      />
       <h1>{title}</h1>
       <ModalList />
       {children}
