@@ -7,7 +7,7 @@ import { showModal } from "./modal";
 import { HowToPlay } from "../modals/how.to.play";
 import { Congrats } from "../modals/congrats";
 import { Loser } from "../modals/loser";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 type blockType = Array<Array<{ letter: string; status: string }>>;
 let savedBlocked: blockType = [[]];
