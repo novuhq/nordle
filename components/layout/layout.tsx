@@ -19,9 +19,9 @@ export const Layout: FC<{
       <Header />
       <h1>{title}</h1>
       <ModalList />
-      <ToastContainer position="top-center" theme="dark" autoClose={1000} />
       {children}
       <Footer />
+      <ToastContainer position="top-center" theme="dark" autoClose={1000} />
     </div>
   );
 };
