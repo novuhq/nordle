@@ -3,6 +3,8 @@ import { Layout } from "../components/layout/layout";
 import dynamic from "next/dynamic";
 const Nordle = dynamic(() => import("../components/main/nordle"));
 
+const CORRECT_ANSWER = 'Tm92MA==';
+
 const Home: NextPage<{ WORD_LENGTH: number }> = (props) => {
   return (
     <Layout title="Guess our new company name!" description="Wordle">
