@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-.header div:nth-child(1) {
+.header div:nth-child(2) {
     flex: 1;
 }
 .header ul {

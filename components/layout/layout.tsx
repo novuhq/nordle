@@ -16,12 +16,11 @@ export const Layout: FC<{
   const { children, title } = props;
   return (
     <div className={styles.wrapper}>
-      <Header />
+      <Header title={title} />
       <NextSeo
         title={"Notifire - Find our new company name"}
         description={"Wordle or should we say Nordle? (Hint)"}
       />
-      <h1>{title}</h1>
       <ModalList />
       {children}
       <Footer />
