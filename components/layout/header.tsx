@@ -15,7 +15,7 @@ export const Header: FC<{title: string}> = (props) => {
         Nordle
       </div>
       <div style={{cursor: 'pointer'}}>
-        <Link href="https://github.com/notifirehq/notifire">
+        <Link href="https://github.com/notifirehq/nordle">
           <Github />
         </Link>
       </div>

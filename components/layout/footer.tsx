@@ -11,11 +11,6 @@ export const Footer = () => {
       </div>
       <div style={{flex: 1, display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
         <div>
-          <Link href="https://github.com/notifirehq/nordle">
-          Nordle Github
-          </Link>
-        </div>
-        <div>
           <Link href="https://github.com/notifirehq/notifire">
           Notifire Github
           </Link>

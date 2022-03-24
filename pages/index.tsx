@@ -1,9 +1,13 @@
 import type { NextPage } from "next";
 import { Layout } from "../components/layout/layout";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
 const Nordle = dynamic(() => import("../components/main/nordle"));
 
 const Home: NextPage<{ WORD_LENGTH: number, TOTAL_RETRY: number }> = (props) => {
+  useEffect(() => {
+    console.error('--[Look for the answer - View Source]--')
+  }, []);
   return (
     <Layout title="Guess our new company name!" description="Wordle">
       <Nordle totalRetry={props.TOTAL_RETRY} wordLength={props.WORD_LENGTH} />

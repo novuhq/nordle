@@ -39,13 +39,12 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
         and we would love to invite you to guess our new (in a Wordle-like game)
         and win some sweeeeet swag.
         <br />
-        Guess the company name in six tries. Each guess is{" "}
+        Guess the company name in six tries.
+        <br />
+        Each guess is{" "}
         {numbers[props.wordLength as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10]}
         -letters, use the hints on the screen, and your amazing developer{"'"}s
         skills. <br />
-        After each guess, the color of the tiles will change to show how close
-        your guess was to the word.
-        <br />
         <br />
         After each guess, the color of the tiles will change to show how close
         your guess was to the word.
@@ -59,7 +58,6 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
               <div data-letter="e" />
               <div data-letter="a" />
               <div data-letter="r" />
-              <div data-letter="y" />
             </div>
             <p>
               The letter <strong>W</strong> is in the word and in the correct
@@ -68,11 +66,10 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
           </div>
           <div className="example">
             <div data-row>
-              <div data-letter="p" />
+              <div data-letter="g" />
               <div data-letter="i" style={{ backgroundColor: "#b59f3b" }} />
-              <div data-letter="l" />
-              <div data-letter="l" />
-              <div data-letter="s" />
+              <div data-letter="f" />
+              <div data-letter="t" />
             </div>
             <p>
               The letter <strong>I</strong> is in the word but in the wrong
@@ -81,11 +78,10 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
           </div>
           <div className="example">
             <div data-row>
-              <div data-letter="v" />
+              <div data-letter="m" />
               <div data-letter="a" />
-              <div data-letter="g" />
-              <div data-letter="u" style={{ backgroundColor: "#3a3a3c" }} />
-              <div data-letter="e" />
+              <div data-letter="k" />
+              <div data-letter="e" style={{ backgroundColor: "#3a3a3c" }} />
             </div>
             <p>
               The letter <strong>U</strong> is not in the word in any spot.
