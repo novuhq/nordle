@@ -44,7 +44,7 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
     showModal({
       title: "Congratulation",
       disabledClosing: true,
-      component: () => <Congrats />,
+      component: (close, ref) => <Congrats getRef={ref} />,
       minWidth: 1000,
     });
   }, []);
