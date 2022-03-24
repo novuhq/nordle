@@ -7,18 +7,27 @@ import { showModal } from "./modal";
 import { HowToPlay } from "../modals/how.to.play";
 import { Congrats } from "../modals/congrats";
 import { Loser } from "../modals/loser";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import { Retry } from "../modals/retry";
 
 type blockType = Array<Array<{ letter: string; status: string }>>;
 let savedBlocked: blockType = [[]];
+let retryAmount = 0;
 
-const Nordle: FC<{ wordLength: number }> = (props) => {
+const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
   const [_, setBlocks] = useState<false | blockType>(false);
   const [lock, setLock] = useState(false);
+  const [ret, setRetryAmount] = useState(0);
   const { wordLength } = props;
 
   useEffect(() => {
     const tries = window.localStorage.getItem("tries");
+    const retry = localStorage.getItem("retry");
+    if (retry) {
+      retryAmount = Number(retry);
+      setRetryAmount(Number(retry));
+    }
+
     savedBlocked = tries
       ? (JSON.parse(tries!) as blockType)
       : [...new Array(6)].map(() =>
@@ -32,7 +41,9 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
     if (!tries) {
       showModal({
         title: "Guess our company name and win some swag!",
-        component: (close) => <HowToPlay close={close} wordLength={wordLength} />,
+        component: (close) => (
+          <HowToPlay close={close} wordLength={wordLength} />
+        ),
       });
     } else {
       checkForComplete();
@@ -49,13 +60,41 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
     });
   }, []);
 
+  const clickToRetry = useCallback((close: () => void) => {
+    localStorage.removeItem('tries');
+    const retry = localStorage.getItem("retry");
+    setRetryAmount(retry ? Number(retry) + 1 : 1);
+    retryAmount = Number(retry) + 1;
+    localStorage.setItem("retry", String(Number(retry) + 1));
+    setLock(false);
+    savedBlocked = [...new Array(6)].map(() =>
+      [...new Array(wordLength || 4)].map(() => ({
+        letter: "",
+        status: "",
+      }))
+    );
+    setBlocks(savedBlocked);
+    close();
+  }, []);
+
   const failed = useCallback(() => {
-    showModal({
-      title: "Ohh no",
-      disabledClosing: true,
-      component: () => <Loser />,
-      minWidth: 1000,
-    });
+    if (+retryAmount >= +props.totalRetry) {
+      showModal({
+        title: "Ohh no",
+        disabledClosing: true,
+        component: () => <Loser />,
+        minWidth: 1000,
+      });
+    } else {
+      showModal({
+        title: "Ohh no",
+        disabledClosing: true,
+        component: (close) => (
+          <Retry close={close} clickToRetry={clickToRetry} />
+        ),
+        minWidth: 1000,
+      });
+    }
   }, []);
 
   const allowSend = useMemo(() => {
@@ -84,7 +123,7 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
 
     const { data } = await axios.get(`/api/check?words=${letters}`);
     if (data.every((f: any) => !f.status)) {
-      toast.info('Not a valid word');
+      toast.info("Not a valid word");
       setLoading(false);
       return;
     }

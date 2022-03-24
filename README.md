@@ -7,22 +7,24 @@
 <p align="center">Built with Next.js (typescript)</p>
 ## ⭐️ Easy to use Wordle
 
-Nordle contains two required Environment Variable
+Nordle contains three required Environment Variable
 
 WORDLE_WORD - The word needs to be solved
+
+WORDLE_RETRIES - The amount of retries a visitor can have
 
 WORDLE_DICTIONARY - true / false (should we check valid words against the dictionary)
 
 You can start it by using
 
 ```bash
-WORDLE_DICTIONARY=true WORDLE_WORD=notifire npm run dev
+WORDLE_RETRIES=1 WORDLE_DICTIONARY=true WORDLE_WORD=notifire npm run dev
 ```
 
 OR
 
 ```bash
-WORDLE_DICTIONARY=false WORDLE_WORD=notifire npm run start
+WORDLE_RETRIES=10 WORDLE_DICTIONARY=false WORDLE_WORD=notifire npm run start
 ```
 
 
