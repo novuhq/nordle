@@ -85,6 +85,7 @@ const Nordle: FC<{ wordLength: number }> = (props) => {
     const { data } = await axios.get(`/api/check?words=${letters}`);
     if (data.every((f: any) => !f.status)) {
       toast.info('Not a valid word');
+      setLoading(false);
       return;
     }
     complete(data);

@@ -1,6 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import words from "an-array-of-english-words";
 
+let wordr: any = {};
+for (const add of words) {
+  wordr[add] = true;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
@@ -9,7 +14,7 @@ export default async function handler(
   const letters = (req.query.words as string) || "";
   const splitLetters = letters.split("");
 
-  if (letters !== word && words.indexOf(letters) === -1) {
+  if (letters !== word && !wordr[letters]) {
     res.json(splitLetters.map((l) => ({ letter: l, status: "" })));
     return;
   }
