@@ -56,7 +56,7 @@ export const Keyboard: FC<{
         props.onSend();
       } else if (evt.key.toLowerCase() === "backspace") {
         props.onDelete();
-      } else if (abc.indexOf(evt.key) > -1 && !allowSend) {
+      } else if (abc.indexOf(evt.key.toLowerCase()) > -1 && !allowSend) {
         props.onClick(evt.key);
       }
     });
