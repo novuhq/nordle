@@ -32,14 +32,20 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
             zIndex: 10,
           }}
         />
-        Hey! We are Notifire an open-source notification infrastructure,<br />
-        We are very excited to announce we are changing our company name,<br />
-        and we would love to invite you to guess our new (in a Wordle-like game) and win some sweeeeet swag.<br />
-        Guess the company name in six tries.
+        Hey! We are Notifire an open-source notification infrastructure,
         <br />
-        Each guess must be a valid{" "}
+        We are very excited to announce we are changing our company name,
+        <br />
+        and we would love to invite you to guess our new (in a Wordle-like game)
+        and win some sweeeeet swag.
+        <br />
+        Guess the company name in six tries. Each guess is{" "}
         {numbers[props.wordLength as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10]}
-        -letter word. Hit the enter button to submit.
+        -letters, use the hints on the screen, and your amazing developer{"'"}s
+        skills. <br />
+        After each guess, the color of the tiles will change to show how close
+        your guess was to the word.
+        <br />
         <br />
         After each guess, the color of the tiles will change to show how close
         your guess was to the word.
