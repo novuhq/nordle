@@ -83,7 +83,7 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
               <div data-letter="e" style={{ backgroundColor: "#3a3a3c" }} />
             </div>
             <p>
-              The letter <strong>U</strong> is not in the word in any spot.
+              The letter <strong>E</strong> is not in the word in any spot.
             </p>
           </div>
         </div>
