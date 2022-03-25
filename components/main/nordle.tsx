@@ -56,7 +56,6 @@ const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
       title: "Congratulation",
       disabledClosing: true,
       component: (close, ref) => <Congrats getRef={ref} />,
-      minWidth: 1000,
     });
   }, []);
 
@@ -83,7 +82,6 @@ const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
         title: "Ohh no",
         disabledClosing: true,
         component: () => <Loser />,
-        minWidth: 1000,
       });
     } else {
       showModal({

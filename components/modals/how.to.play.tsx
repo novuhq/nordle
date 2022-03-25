@@ -18,7 +18,7 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
   props
 ) => {
   return (
-    <div style={{ display: "flex", width: "100%" }}>
+    <div style={{ display: "flex", width: "100%", flexWrap: 'wrap' }}>
       <div style={{ flex: 1 }}>
         <div
           onClick={props.close}
@@ -45,7 +45,6 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
         {numbers[props.wordLength as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10]}
         -letters, use the hints on the screen, and your amazing developer{"'"}s
         skills. <br />
-        <br />
         After each guess, the color of the tiles will change to show how close
         your guess was to the word.
         <div className={styles.wrapper}>

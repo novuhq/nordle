@@ -19,7 +19,7 @@ export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
       <br />
       Do you want us to send you some cool swag?
       <br />
-      Just join our discord channel, Send us the correct answer, add in your
+      Just join our discord channel, Send us the correct answer, add in your<br />
       details and, and participate in our giveaway!
       <br />
       <br />
