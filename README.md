@@ -9,13 +9,13 @@
 
 Nordle contains four required Environment Variable
 
-WORDLE_WORD - The word needs to be solved
+WORDLE_WORD - The word needs to be solved.
 
-WORDLE_RETRIES - The amount of retries a visitor can have
+WORDLE_RETRIES - The amount of retries a visitor can have.
 
-WORDLE_KEY - The encrypted key the win the prizes
+WORDLE_KEY - The encrypted key the win the prizes.
 
-WORDLE_DICTIONARY - true / false (should we check valid words against the dictionary)
+WORDLE_DICTIONARY - true / false (should we check valid words against the dictionary).
 
 You can start it by using
 
