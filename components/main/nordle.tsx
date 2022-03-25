@@ -121,13 +121,13 @@ const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
 
     setLoading(true);
 
-    const { data } = await axios.get(`/api/check?words=${letters}`);
+    const { value: data, secret } = (await axios.get(`/api/check?words=${letters}`)).data;
     if (data.every((f: any) => !f.status)) {
       toast.info("Not a valid word");
       setLoading(false);
       return;
     }
-    complete(data);
+    complete(data, secret);
 
     setTimeout(() => {
       setLoading(false);
@@ -152,7 +152,7 @@ const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
     }
   };
 
-  const complete = useCallback((words: any[]) => {
+  const complete = useCallback((words: any[], secret = '') => {
     const group = savedBlocked.findIndex((f) =>
       f.every((f) => f.letter && !f.status)
     );
@@ -168,6 +168,9 @@ const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
     setBlocks(savedBlocked);
 
     localStorage.setItem("tries", JSON.stringify(savedBlocked));
+    if (secret) {
+      localStorage.setItem('secret', secret);
+    }
 
     checkForComplete();
   }, []);
