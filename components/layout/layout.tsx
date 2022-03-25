@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { ModalList } from "../main/modal";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Script from 'next/script'
 
 export const Layout: FC<{
   title: string;
@@ -17,6 +18,19 @@ export const Layout: FC<{
   return (
     <div className={styles.wrapper}>
       <Header title={title} />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-3DKXTL0BXN"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-3DKXTL0BXN');
+        `}
+      </Script>
       <NextSeo
         title={"Notifire - Find our new company name"}
         description={"Wordle or should we say Nordle? (Hint)"}
