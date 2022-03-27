@@ -6,6 +6,14 @@ import { toast } from "react-toastify";
 export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
   const [total, setTotal] = useState(200);
   useEffect(() => {
+    try {
+      // @ts-ignore
+      window.gtag("event", "sign_up", {
+        method: "puzzle",
+      });
+    } catch (err) {}
+  }, []);
+  useEffect(() => {
     setTimeout(() => {
       setTotal(0);
     }, 1000);
@@ -19,7 +27,8 @@ export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
       <br />
       Do you want us to send you some cool swag?
       <br />
-      Just join our discord channel, Send us the correct answer, add in your<br />
+      Just join our discord channel, Send us the correct answer, add in your
+      <br />
       details and, and participate in our giveaway!
       <br />
       <br />
@@ -32,17 +41,20 @@ export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
             padding: 10,
             maxWidth: "100%",
             width: 500,
-            userSelect: 'all',
+            userSelect: "all",
             overflow: "auto",
             whiteSpace: "nowrap",
           }}
         >
           ${localStorage.getItem("secret")}
         </div>
-        <CopyToClipboard text={localStorage.getItem("secret")!} onCopy={() => toast('Copied to clipboard')}>
+        <CopyToClipboard
+          text={localStorage.getItem("secret")!}
+          onCopy={() => toast("Copied to clipboard")}
+        >
           <div
             style={{
-              cursor: 'pointer',
+              cursor: "pointer",
               background: "#252525",
               border: "1px solid #868686",
               marginLeft: 10,
@@ -54,8 +66,11 @@ export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
         </CopyToClipboard>
       </div>
       <br />
-      Go over to our Discord and join the channel: <strong style={{textDecoration: 'underline'}}>#new-name-reveal</strong><br />
-      And feel out the form<br />
+      Go over to our Discord and join the channel:{" "}
+      <strong style={{ textDecoration: "underline" }}>#new-name-reveal</strong>
+      <br />
+      And feel out the form
+      <br />
       <div
         style={{
           cursor: "pointer",
