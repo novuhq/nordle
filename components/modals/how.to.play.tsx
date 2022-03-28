@@ -18,20 +18,8 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
   props
 ) => {
   return (
-    <div style={{ display: "flex", width: "100%", flexWrap: 'wrap' }}>
+    <div style={{ display: "flex", width: "100%", flexWrap: 'wrap' }} onClick={props.close}>
       <div style={{ flex: 1 }}>
-        <div
-          onClick={props.close}
-          style={{
-            cursor: "pointer",
-            width: "100%",
-            height: "100%",
-            position: "fixed",
-            left: 0,
-            top: 0,
-            zIndex: 10,
-          }}
-        />
         Hey! We are Notifire an open-source notification infrastructure,
         <br />
         We are very excited to announce we are changing our company name,
