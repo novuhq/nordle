@@ -16,7 +16,7 @@ export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setTotal(0);
-    }, 1000);
+    }, 1001);
   }, []);
   return (
     <>
