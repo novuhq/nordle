@@ -41,7 +41,7 @@ const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
     if (!tries) {
       showModal({
         title: "Guess our company name and win some swag!",
-        maxWidth: 500,
+        maxWidth: 1000,
         component: (close) => (
           <HowToPlay close={close} wordLength={wordLength} />
         ),
@@ -55,7 +55,7 @@ const Nordle: FC<{ wordLength: number; totalRetry: number }> = (props) => {
   const correct = useCallback(() => {
     showModal({
       title: "Congratulation",
-      maxWidth: 500,
+      maxWidth: 1000,
       disabledClosing: true,
       component: (close, ref) => <Congrats getRef={ref} />,
     });
