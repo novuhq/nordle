@@ -21,8 +21,10 @@
 }
 
 @media (max-width: 500px) {
+    .win {
+        margin-left: 0px !important;
+    }
     .win img {
-        margin-left: 30px !important;
         width: 100% !important;
     }
 }
