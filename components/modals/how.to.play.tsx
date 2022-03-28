@@ -76,7 +76,7 @@ export const HowToPlay: FC<{ close: () => void; wordLength: number }> = (
           </div>
         </div>
       </div>
-      <div style={{ marginLeft: 30, display: "flex", flexDirection: "column" }}>
+      <div style={{ marginLeft: 30, display: "flex", flexDirection: "column" }} className={styles.win}>
         Win Awesome Prizes!
         <img style={{ maxWidth: 400, borderRadius: 10 }} src="/img.png" />
       </div>
