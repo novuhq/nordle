@@ -2,6 +2,7 @@ import Confetti from "react-confetti";
 import { FC, RefObject, useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
+import { DiscordLink } from "../../helpers/discord.link";
 
 export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
   const [total, setTotal] = useState(200);
@@ -71,16 +72,7 @@ export const Congrats: FC<{ getRef: RefObject<any> }> = (props) => {
       <br />
       And feel out the form
       <br />
-      <div
-        style={{
-          cursor: "pointer",
-          fontWeight: "bold",
-          textDecoration: "underline",
-        }}
-        onClick={() => window.open("https://discord.gg/kDs9yJgb")}
-      >
-        https://discord.gg/kDs9yJgb
-      </div>
+      <DiscordLink />
     </>
   );
 };
