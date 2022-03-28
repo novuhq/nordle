@@ -17,6 +17,7 @@ interface ModalInterface {
   uniqueId: string;
   title: string | ReactElement;
   minWidth?: any;
+  maxWidth?: any;
   component: ReactElement;
   close: () => void;
   disabledClosing?: boolean;
@@ -27,6 +28,7 @@ interface ModalInterfaceAdd {
   title: string | ReactElement;
   disabledClosing?: boolean;
   minWidth?: any;
+  maxWidth?: any;
   component: (close: () => void, ref: RefObject<any>) => ReactElement;
 }
 
@@ -39,7 +41,7 @@ export const Modal: FC<ModalInterface> = (props) => {
       <div
         ref={props.passRef}
         className={styles.modal}
-        style={{ minWidth: props.minWidth }}
+        style={{ minWidth: props.minWidth, maxWidth: props.maxWidth }}
         onClick={($event) => $event.stopPropagation()}
       >
         {!props.disabledClosing && (
