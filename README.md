@@ -5,7 +5,12 @@
 </p>
 <h1 align="center">Nordle.</h1>
 <p align="center">Built with Next.js (typescript)</p>
+
 ## ⭐️ Easy to use Wordle
+
+Demo Can be found here
+
+[https://nordle.notifire.co/](https://nordle.notifire.co/)
 
 Nordle contains four required Environment Variable
 
